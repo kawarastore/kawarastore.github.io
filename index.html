@@ -472,10 +472,23 @@
             <div class="card">
                 <h2><i class="fas fa-fire"></i> BOOST SERVER X8</h2>
                 <div class="items-grid">
-                    <div class="item-card" data-item="Boost Server 6 Jam" data-price="110000" data-description="5.500k / org, max 20 player">
-                        <h3>Boost Server 12 Jam</h3>
-                        <div class="price">Rp 300.000</div>
-                        <div class="description">15.000k / orang, max 20 player</div>
+                    <!-- MENU BARU: Durasi Boost Server -->
+                    <div class="item-card" data-item="Boost Server X8 (6 Jam)" data-price="110000" data-description="5.500k / orang, max 20 player">
+                        <h3>Boost Server X8 - 6 Jam</h3>
+                        <div class="price">Rp 140.000</div>
+                        <div class="description">7.000k / orang, max 20 player</div>
+                    </div>
+                    
+                    <div class="item-card" data-item="Boost Server X8 (12 Jam)" data-price="300000" data-description="15.000k / orang, max 20 player">
+                        <h3>Boost Server X8 - 12 Jam</h3>
+                        <div class="price">Rp 280.000</div>
+                        <div class="description">14.000k / orang, max 20 player</div>
+                    </div>
+                    
+                    <div class="item-card" data-item="Boost Server X8 (24 Jam)" data-price="550000" data-description="27.500k / orang, max 20 player">
+                        <h3>Boost Server X8 - 24 Jam</h3>
+                        <div class="price">Rp 420.000</div>
+                        <div class="description">21.000k / orang, max 20 player</div>
                     </div>
                 </div>
             </div>
@@ -615,7 +628,9 @@
     <script>
         // Data produk yang tersedia
         const products = {
-            "Boost Server 6 Jam": { price: 110000, description: "5.500k / org, max 20 player" },
+            "Boost Server X8 (6 Jam)": { price: 140000, description: "7.000k / orang, max 20 player" },
+            "Boost Server X8 (12 Jam)": { price: 280000, description: "14.000k / orang, max 20 player" },
+            "Boost Server X8 (24 Jam)": { price: 420000, description: "21.000k / orang, max 20 player" },
             "VIP + Luck (445r)": { price: 43000 },
             "+Mutations (295r)": { price: 28000 },
             "Advanced Luck (545r)": { price: 53000 },
@@ -758,17 +773,6 @@ Apakah item ini tersedia?`;
             
             // Open WhatsApp in new tab
             window.open(whatsappURL, '_blank');
-            
-            // Reset form (optional)
-            // document.getElementById('username').value = '';
-            // document.getElementById('payment').selectedIndex = 0;
-            // document.querySelectorAll('.item-card').forEach(card => card.classList.remove('selected'));
-            // document.getElementById('selected-item').value = '';
-            // document.getElementById('price-summary').textContent = 'Rp 0';
-            // document.getElementById('total-summary').textContent = 'Rp 0';
-            // selectedItemName = '';
-            // selectedItemPrice = 0;
-            // checkOrderButton();
             
             // Show success message
             alert('Pesanan Anda akan dibuka di WhatsApp. Silakan kirim pesan ke admin untuk melanjutkan.');
