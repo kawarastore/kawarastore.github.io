@@ -17,70 +17,60 @@
             --accent: #ffdf5c;
             --dark-bg: #0b0c0f;
             --dark-card: #14161c;
-            --text-light: rgba(255,255,255,0.85);
+            --text-light: rgba(255, 255, 255, 0.85);
+            --transition: all 0.3s ease;
             --radius: 16px;
-            --shadow: 0 10px 30px rgba(0,0,0,.25);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg,#0f1117,#181b25);
-            color: white;
+            background: linear-gradient(135deg, #0f1117, #181b25);
+            color: #fff;
         }
 
         header {
-            text-align: center;
             padding: 60px 20px 40px;
-            background: linear-gradient(135deg,var(--primary),var(--secondary));
-            box-shadow: var(--shadow);
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-        }
+        header h1 { font-size: 3rem; font-weight: 800; }
+        header p { opacity: .9; margin-top: 10px; }
 
-        header p {
-            margin-top: 10px;
-            opacity: .9;
-        }
-
-        /* SOLD INFO */
-        .sold-info {
-            margin-top: 20px;
-            font-weight: 700;
-            color: #ffdf5c;
-        }
-
-        /* TAB */
         .tab-container { max-width: 1200px; margin: auto; padding: 20px; }
-        .tab-header { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+
+        .tab-header {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
         .tab-btn {
-            padding: 10px 20px;
+            padding: 12px 22px;
             border-radius: 50px;
-            border: 1px solid rgba(255,255,255,.2);
-            background: transparent;
-            color: white;
+            background: #222;
+            color: #fff;
+            border: none;
             cursor: pointer;
             font-weight: 600;
         }
+
         .tab-btn.active {
-            background: linear-gradient(135deg,var(--primary),var(--secondary));
-            border: none;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        /* CARD */
         .card {
             background: rgba(20,22,28,.8);
-            border-radius: var(--radius);
-            padding: 25px;
+            padding: 30px;
+            border-radius: 16px;
             margin-bottom: 30px;
-            box-shadow: var(--shadow);
         }
 
         .items-grid {
@@ -89,60 +79,71 @@
             gap: 20px;
         }
 
+        /* ================= SOLD STYLE ================= */
         .item-card {
-            background: rgba(30,32,38,.6);
-            border-radius: 12px;
-            padding: 20px;
-            opacity: .45;
-            pointer-events: none;
             position: relative;
+            background: #1f222a;
+            padding: 20px;
+            border-radius: 12px;
+            opacity: .55;
+            pointer-events: none;
         }
 
         .sold-badge {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #ff4d4d;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: .75rem;
-            font-weight: 700;
+            inset: 0;
+            background: rgba(0,0,0,.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .sold-badge span {
+            background: red;
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+        }
+
+        .sold-badge small {
+            opacity: .9;
+            font-weight: 500;
         }
 
         .price {
-            color: var(--accent);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin: 10px 0;
+            color: var(--accent);
         }
 
-        /* ORDER FORM */
         .order-form {
             background: rgba(20,22,28,.9);
-            border-radius: var(--radius);
             padding: 25px;
-            margin-bottom: 30px;
+            border-radius: 16px;
         }
 
         .form-control {
             width: 100%;
             padding: 14px;
-            margin-bottom: 15px;
-            background: rgba(30,32,38,.8);
-            border: none;
             border-radius: 10px;
-            color: white;
+            border: none;
+            background: #2a2d36;
+            color: #fff;
+            margin-bottom: 15px;
         }
 
         .btn-order {
             width: 100%;
             padding: 16px;
-            border-radius: 10px;
+            border-radius: 12px;
             background: #555;
+            color: #fff;
+            font-weight: 700;
             border: none;
-            color: white;
-            font-weight: 800;
             cursor: not-allowed;
         }
 
@@ -157,43 +158,38 @@
 
 <header>
     <h1><i class="fas fa-store"></i> KAWARA STORE</h1>
-    <p>Pilih item dan pesan secara otomatis via WhatsApp</p>
-
-    <div class="sold-info">
-        ⚠️ SEMUA ITEM SEDANG SOLD HABIS <br>
-        🔄 RESTOCK DALAM 1–3 HARI KE DEPAN
-    </div>
+    <p>⚠️ Semua item SOLD — Restock 1–3 Hari Lagi</p>
 </header>
 
 <div class="tab-container">
 
     <div class="tab-header">
-        <button class="tab-btn active" data-tab="boost">Boost Server</button>
+        <button class="tab-btn active" data-tab="boost">Boost</button>
         <button class="tab-btn" data-tab="gamepass">Gamepass</button>
-        <button class="tab-btn" data-tab="crates">Spins</button>
-        <button class="tab-btn" data-tab="skin">Skin</button>
-    </div>
-
-    <div class="order-form">
-        <input class="form-control" placeholder="Username Roblox" disabled>
-        <input class="form-control" placeholder="Item" disabled>
-        <button class="btn-order">🚫 SOLD HABIS – RESTOCK 1–3 HARI</button>
+        <button class="tab-btn" data-tab="crates">Crates</button>
+        <button class="tab-btn" data-tab="skinbundle">Skin</button>
     </div>
 
     <!-- BOOST -->
     <div id="boost" class="tab-content active">
         <div class="card">
-            <h2>BOOST SERVER X8</h2>
             <div class="items-grid">
                 <div class="item-card">
-                    <div class="sold-badge">SOLD OUT</div>
-                    <h3>Boost Server 6 Jam</h3>
+                    <h3>Boost Server X8 - 6 Jam</h3>
                     <div class="price">Rp 120.000</div>
+                    <div class="sold-badge">
+                        <span>SOLD</span>
+                        <small>Restock 1–3 Hari</small>
+                    </div>
                 </div>
+
                 <div class="item-card">
-                    <div class="sold-badge">SOLD OUT</div>
-                    <h3>Boost Server 9 Jam</h3>
-                    <div class="price">Rp 180.000</div>
+                    <h3>Boost Server X8 - 24 Jam</h3>
+                    <div class="price">Rp 350.000</div>
+                    <div class="sold-badge">
+                        <span>SOLD</span>
+                        <small>Restock 1–3 Hari</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,63 +198,45 @@
     <!-- GAMEPASS -->
     <div id="gamepass" class="tab-content">
         <div class="card">
-            <h2>GAMEPASS</h2>
             <div class="items-grid">
                 <div class="item-card">
-                    <div class="sold-badge">SOLD OUT</div>
                     <h3>VIP + Luck</h3>
                     <div class="price">Rp 50.000</div>
+                    <div class="sold-badge">
+                        <span>SOLD</span>
+                        <small>Restock 1–3 Hari</small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- CRATES -->
-    <div id="crates" class="tab-content">
-        <div class="card">
-            <h2>SPINS</h2>
-            <div class="items-grid">
-                <div class="item-card">
-                    <div class="sold-badge">SOLD OUT</div>
-                    <h3>Spin x1</h3>
-                    <div class="price">Rp 10.000</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SKIN -->
-    <div id="skin" class="tab-content">
-        <div class="card">
-            <h2>SKIN BUNDLE</h2>
-            <div class="items-grid">
-                <div class="item-card">
-                    <div class="sold-badge">SOLD OUT</div>
-                    <h3>Skin Bundle</h3>
-                    <div class="price">Rp 55.000</div>
-                </div>
-            </div>
-        </div>
+    <!-- ORDER FORM -->
+    <div class="order-form">
+        <input class="form-control" placeholder="Username Roblox" disabled>
+        <input class="form-control" placeholder="Item (SOLD)" disabled>
+        <select class="form-control" disabled>
+            <option>Semua item sedang SOLD</option>
+        </select>
+        <button class="btn-order">RESTOCK 1–3 HARI LAGI</button>
     </div>
 
 </div>
 
 <footer>
-    © 2025 Kawara Store
+    <p>© 2025 Kawara Store</p>
 </footer>
 
 <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(btn => {
-        btn.onclick = () => {
-            tabs.forEach(b => b.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById(btn.dataset.tab).classList.add('active');
-        };
-    });
+    // TAB
+    document.querySelectorAll('.tab-btn').forEach(btn=>{
+        btn.onclick=()=>{
+            document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'))
+            document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'))
+            btn.classList.add('active')
+            document.getElementById(btn.dataset.tab).classList.add('active')
+        }
+    })
 </script>
 
 </body>
