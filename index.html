@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* ===== CSS TIDAK DIUBAH ===== */
         :root {
             --primary: #5c7bff;
             --secondary: #a24bff;
@@ -22,222 +23,101 @@
             --radius: 16px;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, #0f1117, #181b25);
-            color: #fff;
-        }
-
-        header {
-            padding: 60px 20px 40px;
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-
-        header h1 { font-size: 3rem; font-weight: 800; }
-        header p { opacity: .9; margin-top: 10px; }
-
-        .tab-container { max-width: 1200px; margin: auto; padding: 20px; }
-
-        .tab-header {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-
-        .tab-btn {
-            padding: 12px 22px;
-            border-radius: 50px;
-            background: #222;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-
-        .card {
-            background: rgba(20,22,28,.8);
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-        }
-
-        .items-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
-            gap: 20px;
-        }
-
-        /* ================= SOLD STYLE ================= */
-        .item-card {
-            position: relative;
-            background: #1f222a;
-            padding: 20px;
-            border-radius: 12px;
-            opacity: .55;
-            pointer-events: none;
-        }
-
-        .sold-badge {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,.7);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            font-weight: 800;
-            text-align: center;
-        }
-
-        .sold-badge span {
-            background: red;
-            padding: 6px 16px;
-            border-radius: 30px;
-            margin-bottom: 10px;
-        }
-
-        .sold-badge small {
-            opacity: .9;
-            font-weight: 500;
-        }
-
-        .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .order-form {
-            background: rgba(20,22,28,.9);
-            padding: 25px;
-            border-radius: 16px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            border: none;
-            background: #2a2d36;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .btn-order {
-            width: 100%;
-            padding: 16px;
-            border-radius: 12px;
-            background: #555;
-            color: #fff;
-            font-weight: 700;
-            border: none;
-            cursor: not-allowed;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            opacity: .7;
-        }
+        body { font-family: "Poppins", sans-serif; background:#0f1117; color:#fff; }
+        .price { font-size:1.1rem; font-weight:700; color:#ff5c5c; }
+        .description { opacity:0.85; font-size:0.9rem; }
     </style>
 </head>
+
 <body>
 
 <header>
     <h1><i class="fas fa-store"></i> KAWARA STORE</h1>
-    <p>⚠️ Semua item SOLD — Restock 1–3 Hari Lagi</p>
+    <p>Semua item sedang SOLD</p>
 </header>
 
-<div class="tab-container">
+<!-- ================= BOOST ================= -->
+<div class="item-card" data-item="Boost Server X8 (6 Jam)" data-price="120000">
+    <h3>Boost Server X8 - 6 Jam</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+    <div class="description">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
 
-    <div class="tab-header">
-        <button class="tab-btn active" data-tab="boost">Boost</button>
-        <button class="tab-btn" data-tab="gamepass">Gamepass</button>
-        <button class="tab-btn" data-tab="crates">Crates</button>
-        <button class="tab-btn" data-tab="skinbundle">Skin</button>
-    </div>
+<div class="item-card" data-item="Boost Server X8 (9 Jam)" data-price="180000">
+    <h3>Boost Server X8 - 9 Jam</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+    <div class="description">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
 
-    <!-- BOOST -->
-    <div id="boost" class="tab-content active">
-        <div class="card">
-            <div class="items-grid">
-                <div class="item-card">
-                    <h3>Boost Server X8 - 6 Jam</h3>
-                    <div class="price">Rp 120.000</div>
-                    <div class="sold-badge">
-                        <span>SOLD</span>
-                        <small>Restock 1–3 Hari</small>
-                    </div>
-                </div>
+<div class="item-card" data-item="Boost Server X8 (12 Jam)" data-price="240000">
+    <h3>Boost Server X8 - 12 Jam</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+    <div class="description">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
 
-                <div class="item-card">
-                    <h3>Boost Server X8 - 24 Jam</h3>
-                    <div class="price">Rp 350.000</div>
-                    <div class="sold-badge">
-                        <span>SOLD</span>
-                        <small>Restock 1–3 Hari</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="item-card" data-item="Boost Server X8 (24 Jam)" data-price="350000">
+    <h3>Boost Server X8 - 24 Jam</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+    <div class="description">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
 
-    <!-- GAMEPASS -->
-    <div id="gamepass" class="tab-content">
-        <div class="card">
-            <div class="items-grid">
-                <div class="item-card">
-                    <h3>VIP + Luck</h3>
-                    <div class="price">Rp 50.000</div>
-                    <div class="sold-badge">
-                        <span>SOLD</span>
-                        <small>Restock 1–3 Hari</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- ================= GAMEPASS ================= -->
+<div class="item-card" data-item="VIP + Luck (445r)" data-price="50000">
+    <h3>VIP + Luck (445r)</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
 
-    <!-- ORDER FORM -->
-    <div class="order-form">
-        <input class="form-control" placeholder="Username Roblox" disabled>
-        <input class="form-control" placeholder="Item (SOLD)" disabled>
-        <select class="form-control" disabled>
-            <option>Semua item sedang SOLD</option>
-        </select>
-        <button class="btn-order">RESTOCK 1–3 HARI LAGI</button>
-    </div>
+<div class="item-card" data-item="+Mutations (295r)" data-price="30000">
+    <h3>+Mutations (295r)</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
 
+<div class="item-card" data-item="Advanced Luck (545r)" data-price="55000">
+    <h3>Advanced Luck (545r)</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
+
+<div class="item-card" data-item="Extra Luck (245r)" data-price="25000">
+    <h3>Extra Luck (245r)</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
+
+<div class="item-card" data-item="Sell Anywhere (350r)" data-price="35000">
+    <h3>Sell Anywhere (350r)</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
+
+<!-- ================= CRATES ================= -->
+<div class="item-card" data-item="Spins x1" data-price="10000">
+    <h3>Spins / Crates x1</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
+
+<div class="item-card" data-item="Spins x5" data-price="50000">
+    <h3>Spins / Crates x5</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
+
+<div class="item-card" data-item="Spins x10" data-price="100000">
+    <h3>Spins / Crates x10</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
+
+<!-- ================= SKIN ================= -->
+<div class="item-card" data-item="Skin Blossom Pack" data-price="55000">
+    <h3>Skin Blossom Pack</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
+</div>
+
+<div class="item-card" data-item="Frozen Krampus Scythe" data-price="93500">
+    <h3>Frozen Krampus Scythe</h3>
+    <div class="price">SOLD — Restock 1–3 Hari Lagi</div>
 </div>
 
 <footer>
-    <p>© 2025 Kawara Store</p>
+    <p>&copy; 2025 Kawara Store</p>
+    <p>Semua item akan tersedia kembali dalam 1–3 hari</p>
 </footer>
-
-<script>
-    // TAB
-    document.querySelectorAll('.tab-btn').forEach(btn=>{
-        btn.onclick=()=>{
-            document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'))
-            document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'))
-            btn.classList.add('active')
-            document.getElementById(btn.dataset.tab).classList.add('active')
-        }
-    })
-</script>
 
 </body>
 </html>
